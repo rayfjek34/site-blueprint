@@ -1,0 +1,133 @@
+/* ╔══════════════════════════════════════════════════════╗
+   ║              DESIGN TOKENS                          ║
+   ║  All visual decisions live here as CSS variables.   ║
+   ║  Change a token → changes the entire site.          ║
+   ╚══════════════════════════════════════════════════════╝ */
+
+/* ─── Fonts ─────────────────────────────────────────────
+   Swap font URLs and variable names to change typefaces.
+   --font-display : headings, labels, hero name
+   --font-body    : body copy, inputs, buttons
+──────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+:root {
+
+  /* ── Palette (dark theme, default) ─────────────────── */
+  --color-bg:          #091A12;          /* page background                */
+  --color-bg-deep:     #0D261A;          /* hero & gradient anchor         */
+  --color-primary:     #42BD80;          /* brand / interactive            */
+  --color-primary-dim: rgba(66,189,128,0.14);
+  --color-primary-mid: #28714D;          /* mid-tone for gradients         */
+  --color-primary-hi:  #B4E4CC;          /* light highlight                */
+
+  /* Surfaces */
+  --color-surface:     rgba(5, 18, 10, 0.72);
+  --color-surface-card:rgba(5, 15, 8, 0.80);
+
+  /* Borders */
+  --color-border:      rgba(66,189,128,0.18);
+  --color-border-hi:   rgba(66,189,128,0.42);
+
+  /* Text */
+  --color-text:        #ffffff;
+  --color-text-sec:    rgba(210, 240, 225, 0.85);
+  --color-text-muted:  rgba(180,228,204,0.50);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-display:      'Exo 2', sans-serif;
+  --font-body:         'DM Sans', sans-serif;
+
+  --text-xs:   0.72rem;
+  --text-sm:   0.82rem;
+  --text-base: 0.95rem;
+  --text-md:   1.05rem;
+  --text-lg:   1.15rem;
+  --text-xl:   1.35rem;
+  --text-2xl:  clamp(2rem, 4vw, 3rem);
+  --text-hero: clamp(2.8rem, 8vw, 5.5rem);
+
+  --weight-light:  300;
+  --weight-reg:    400;
+  --weight-mid:    500;
+  --weight-semi:   600;
+  --weight-bold:   700;
+  --weight-black:  800;
+  --weight-xblack: 900;
+
+  --leading-tight:  1.1;
+  --leading-snug:   1.3;
+  --leading-normal: 1.65;
+  --leading-loose:  1.78;
+
+  /* ── Spacing scale ──────────────────────────────────── */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* ── Border radius ──────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  22px;
+  --radius-3xl:  28px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────── */
+  --shadow-sm:   0 4px 16px rgba(0,0,0,0.25);
+  --shadow-md:   0 8px 32px rgba(0,0,0,0.35);
+  --shadow-lg:   0 16px 48px rgba(0,0,0,0.40);
+  --shadow-accent: 0 8px 24px rgba(66,189,128,0.35);
+
+  /* ── Layout ─────────────────────────────────────────── */
+  --nav-h:        80px;
+  --container-w:  1140px;
+  --section-py:   100px;
+
+  /* ── Easing ─────────────────────────────────────────── */
+  --ease:         cubic-bezier(0.16,1,0.3,1);
+  --ease-bounce:  cubic-bezier(0.34,1.56,0.64,1);
+
+  /* ── Background gradient ─────────────────────────────
+     CSS fallback used when the JS ShaderGradient is absent.
+     Replace with any gradient or image URL as needed.
+  ──────────────────────────────────────────────────────── */
+  --bg-gradient: radial-gradient(
+    ellipse 110% 80% at 50% -10%,
+    var(--color-primary-mid) 0%,
+    var(--color-bg-deep) 55%,
+    var(--color-bg) 100%
+  );
+}
+
+/* ─── Light theme overrides ──────────────────────────── */
+[data-theme="light"] {
+  --color-bg:           #daf0e5;
+  --color-bg-deep:      #e1f8eb;
+  --color-surface:      rgba(225,248,235,0.78);
+  --color-surface-card: rgba(245,255,250,0.85);
+  --color-border:       rgba(40,113,77,0.18);
+  --color-border-hi:    rgba(40,113,77,0.42);
+  --color-text:         #071810;
+  --color-text-sec:     rgba(10,35,20,0.75);
+  --color-text-muted:   rgba(10,35,20,0.48);
+  --color-primary:      #1a6640;
+  --color-primary-dim:  rgba(40,113,77,0.12);
+  --bg-gradient: radial-gradient(
+    ellipse 110% 80% at 50% -10%,
+    rgba(40,113,77,0.25) 0%,
+    var(--color-bg-deep) 55%,
+    var(--color-bg) 100%
+  );
+}
